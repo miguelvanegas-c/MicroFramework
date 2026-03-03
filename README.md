@@ -44,15 +44,15 @@ This layered design promotes separation of concerns, improves maintainability, a
 ---
 ### 🔍 How does it work?
 > - The microframework class defines the endpoints that the application will have.
-> ![img_4.png](img_4.png)
+> ![img_4.png](imgs/img_4.png)
 
 > - When endpoints are defined, they are registered in the **RouteRegistry** class. This class maintains a dictionary (HashMap) that maps each route path to a corresponding functionality. Additionally, it stores the paths of static resources to allow direct access to static files.> 
 > - An important design detail is that each route is associated with a **RouteHandler**, which is defined as a functional interface. This approach enables endpoints to be declared in a clean and expressive way, following the same style used in the MicroFramework.
-> ![img_5.png](img_5.png)
+> ![img_5.png](imgs/img_5.png)
 
 > - The **HTTPServer** class is responsible for establishing the connection with the client through a socket and managing the request lifecycle. When a request arrives, the server extracts the requested path and checks whether a matching endpoint exists in the registry.
 > - If an endpoint is found, the corresponding RouteHandler is executed to generate the response. Otherwise, the server attempts to locate the requested resource in the static files directory by determining its file type.
->![img_6.png](img_6.png)
+>![img_6.png](imgs/img_6.png)
 
 > - If neither a dynamic endpoint nor a static file is found, the system automatically returns a **404 Not Found** response.>
 > - This process ensures a clear separation between dynamic request handling and static file serving, while providing a simple and extensible routing mechanism.
@@ -66,19 +66,19 @@ Based on this setup, the development flow can be described as follows:
 
 1. Creation of endpoints and definition of their corresponding functions.
 2. Definition of the static files path used to serve frontend resources.
-3. Development of the website by creating static files such as <img src="img_1.png" width="30"/>, <img src="img_2.png" width="60"/>, <img src="img.png" width="30"/>, and <img src="img_3.png" width="30"/> images.
+3. Development of the website by creating static files such as <img src="imgs/img_1.png" width="30"/>, <img src="imgs/img_2.png" width="60"/>, <img src="imgs/img.png" width="30"/>, and <img src="imgs/img_3.png" width="30"/> images.
 4. Once the server is running, requests can be made through the URL provided by the server socket to access both dynamic endpoints and static resources, such as the following examples:
     - **Endpoints**
     > - http://localhost:35000/pi
     > 
-    > ![img_7.png](img_7.png)
+    > ![img_7.png](imgs/img_7.png)
     > - http://localhost:35000/hello?name=miguel
     > 
-    > ![img_8.png](img_8.png)
+    > ![img_8.png](imgs/img_8.png)
     - **StaticFiles**
     > - http://localhost:35000/index.html
     > 
-    > ![img_9.png](img_9.png)
+    > ![img_9.png](imgs/img_9.png)
     > - http://localhost:35000/inde.html
     > 
-    > ![img_10.png](img_10.png)
+    > ![img_10.png](imgs/img_10.png)
