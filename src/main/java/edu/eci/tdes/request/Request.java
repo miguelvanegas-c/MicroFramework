@@ -1,4 +1,4 @@
-package edu.eci.tdes.registry.request;
+package edu.eci.tdes.request;
 
 public interface Request {
     String getValue(String key);

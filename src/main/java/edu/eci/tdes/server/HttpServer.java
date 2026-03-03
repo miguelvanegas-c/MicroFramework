@@ -2,10 +2,10 @@ package edu.eci.tdes.server;
 
 import edu.eci.tdes.registry.RouteHandler;
 import edu.eci.tdes.registry.RouteRegistry;
-import edu.eci.tdes.registry.request.Request;
-import edu.eci.tdes.registry.request.RequestImpl;
-import edu.eci.tdes.registry.response.Response;
-import edu.eci.tdes.registry.response.ResponseImpl;
+import edu.eci.tdes.request.Request;
+import edu.eci.tdes.request.RequestImpl;
+import edu.eci.tdes.response.Response;
+import edu.eci.tdes.response.ResponseImpl;
 
 import java.net.*;
 import java.io.*;

@@ -1,8 +1,8 @@
 package edu.eci.tdes.registry;
 
 
-import edu.eci.tdes.registry.request.Request;
-import edu.eci.tdes.registry.response.Response;
+import edu.eci.tdes.request.Request;
+import edu.eci.tdes.response.Response;
 
 @FunctionalInterface
 public interface RouteHandler {

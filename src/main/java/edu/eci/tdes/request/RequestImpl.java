@@ -1,4 +1,4 @@
-package edu.eci.tdes.registry.request;
+package edu.eci.tdes.request;
 
 import java.util.HashMap;
 import java.util.Map;
